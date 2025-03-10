@@ -1,0 +1,410 @@
+/* Fonts */
+@font-face {
+    font-family: "Nexa-ExtraLight";
+    src: url(/font/Nexa-ExtraLight.ttf);
+}
+@font-face {
+    font-family: "Nexa-Heavy";
+    src: url(/font/Nexa-Heavy.ttf);
+}
+@font-face {
+    font-family: "Montserrat-Regular";
+    src: url(/font/Montserrat-Regular.otf);
+}
+
+/* General styles */
+body {
+    font-family: "Nexa-ExtraLight", sans-serif;
+    background-color: #f1edff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+/* Styles pour le menu déroulant des langues avec les drapeaux */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropbtn {
+    background-color: #6d4aff;
+    color: white;
+    padding: 15px 20px;
+    font-family: "Nexa-Heavy", sans-serif;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #443086;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    border-radius: 10px;
+}
+
+.dropdown-content a {
+    color: rgb(255, 255, 255);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-content a img {
+    margin-right: 10px;
+}
+
+.dropdown-content a:hover {
+    background-color: #5c4d91;
+    color: white;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #443086;
+}
+
+
+.logo {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+}
+
+
+.main-nav {
+    background-color: #6d4aff;
+    width: 100%;
+    text-align: center;
+}
+
+.main-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.main-nav li {
+    margin: 0 15px;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    font-family: "Nexa-Heavy", sans-serif;
+    padding: 15px 20px;
+    display: inline-block;
+}
+
+.main-nav a:hover {
+    background-color: #443086;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.container {
+    max-width: 1200px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    font-size: 40px;
+    font-family: "Nexa-Heavy", sans-serif;
+    color: #6d4aff;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 30px;
+    font-family: "Nexa-Heavy", sans-serif;
+    color: #443086;
+    margin-bottom: 15px;
+}
+
+p, ul, li {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+.form-group {
+    margin-bottom: 30px;
+}
+
+label {
+    font-family: "Nexa-Heavy", sans-serif;
+    margin-bottom: 5px;
+}
+
+input, textarea, button {
+    width: 95%;
+    height: 50px;
+    padding: 10px;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: 0.5px solid #000000;
+    border-radius: 20px;
+}
+textarea{
+    font-family: "Montserrat-Regular";
+    font-size: 1.1rem;
+}
+button:focus {
+    outline: none;
+    background-color: #6d4aff; /* Couleur du bouton lorsque cliqué */
+    color: white; /* Couleur du texte lorsque cliqué */
+}
+
+input:active, textarea:active {
+    border: 0.5px solid #6d4aff;
+}
+
+.amount-options {
+    display: flex;
+    justify-content: space-between;
+}
+
+.amount-btn {
+    flex: 1;
+    margin: 5px;
+    padding: 10px;
+    border: 0px solid #ccc;
+    border-radius: 20px;
+    background-color: #6d4aff;
+    color: white;
+    cursor: pointer;
+    font-family: "Nexa-Heavy";
+    position: relative;
+    transition: background-color 0.3s; /* Ajoute une transition pour un effet lisse */
+}
+
+.amount-btn:hover {
+    background-color: #443086; /* Couleur de survol */
+    transition: 0.3s;
+}
+
+.amount-btn.selected {
+    background-color: #443086; /* Couleur de sélection identique à celle du survol */
+    color: white;
+    border: 2px solid #443086; 
+}
+
+
+/* Style pour le conteneur du sélecteur de date */
+#date-picker-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#date-picker-wrapper select {
+    flex: 1;
+    margin: 5px;
+    padding: 10px;
+    border: 0.5px solid #000000;
+    border-radius: 20px;
+    background-color: #ffffff;
+    color: #000000;
+    cursor: pointer;
+    font-family: "Nexa-Heavy";
+    transition: background-color 0.3s; /* Ajoute une transition pour un effet lisse */
+}
+
+#date-picker-wrapper input[type="text"] {
+    flex: 2;
+    margin: 5px;
+    padding: 10px;
+    border: 0.5px solid #000000;
+    border-radius: 20px;
+    background-color: #ffffff;
+    color: #000000;
+    font-family: "Nexa-Heavy";
+    text-align: center; /* Centre le texte dans l'input */
+}
+
+button[disabled] {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.hidden {
+    display: none;
+}
+
+.terms-label {
+    display: block;
+    text-align: center; /* Centrer le texte horizontalement */
+    margin-left: auto; /* Centrer le texte verticalement */
+    margin-right: auto;
+}
+
+#user-info {
+    margin-top: 20px;
+}
+
+.loans-available {
+    min-height: 50vh;
+}
+
+.types_de_prets {
+    display: flex;
+    justify-content: center; /* Centrer les li horizontalement */
+    list-style: none;
+    padding: 0;
+    cursor: pointer;
+    flex-wrap: wrap; /* Pour rendre les éléments flexibles */
+}
+
+.types_de_prets li {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Aligner le contenu en haut */
+    align-items: center; /* Centrer le contenu horizontalement */
+    margin: 10px; /* Ajustez la marge si nécessaire */
+    background-color: #6d4aff;
+    border-radius: 40px;
+    padding: 0px;
+    box-shadow: -8px 11px 12px rgba(0, 0, 0, 0.1);
+    width: calc(25% - 20px); /* Quatre éléments par ligne avec espace */
+    height: 400px; /* Ajuster la hauteur pour une meilleure proportion */
+}
+
+.types_de_prets .div, .types_de_prets .div2, .types_de_prets .div3, .types_de_prets .div4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Espace entre l'image et le texte */
+    align-items: center; /* Centrer horizontalement */
+    text-align: center; /* Centrer le texte */
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+.types_de_prets .P1, .types_de_prets p {
+    text-align: center; /* Centrer le texte horizontalement */
+    margin-left: auto; /* Centrer le texte verticalement */
+    margin-right: auto; /* Centrer le texte verticalement */
+    color: white;
+}
+
+.types_de_prets .P1 {
+    font-family: "Nexa-ExtraLight";
+}
+
+.types_de_prets p {
+    font-family: "Nexa-Heavy";
+    font-size: 1.5rem;
+}
+
+.types_de_prets img {
+    width: 100%;
+    height: auto;
+    max-height: 60%; /* Limite la hauteur des images à 60% du conteneur */
+    object-fit: cover;
+    border-radius: 30px; /* Coins arrondis */
+}
+
+.ul3, .ul1 {
+    padding-left: 20px;
+}
+#confirmation-message {
+    display: none;
+    background-color: #6d4aff; /* Couleur du rectangle */
+    color: white; /* Couleur du texte */
+    padding: 20px;
+    border-radius: 20px; /* Contours arrondis */
+    text-align: center;
+    font-family: "Nexa-Heavy", sans-serif;
+}
+/* Styles pour les messages d'erreur */
+.error-message {
+    color: red;
+    font-family: "Nexa-Heavy", sans-serif;
+    display: none;
+}
+
+
+/* Media queries */
+@media (max-width: 1200px) {
+    .types_de_prets li {
+        width: calc(33.33% - 20px); /* Trois éléments par ligne */
+    }
+}
+
+@media (max-width: 900px) {
+    .main-nav ul {
+        flex-direction: column; /* Navigation en colonne sur petits écrans */
+    }
+
+    .main-nav li {
+        margin: 10px 0; /* Ajoute de l'espace entre les éléments du menu */
+    }
+
+    .types_de_prets li {
+        width: calc(50% - 20px); /* Deux éléments par ligne */
+    }
+}
+
+@media (max-width: 600px) {
+    .main-nav ul {
+        flex-direction: column; /* Navigation en colonne sur petits écrans */
+    }
+
+    .main-nav li {
+        margin: 10px 0; /* Ajoute de l'espace entre les éléments du menu */
+    }
+
+    .types_de_prets li {
+        width: 100%; /* Un élément par ligne */
+    }
+
+    .logo {
+        flex-direction: column; /* Les logos en colonne pour petits écrans */
+        align-items: center;
+    }
+
+    .logo1, .logo2 {
+        margin: 5px 0; /* Espacement entre les logos */
+    }
+
+    .container {
+        padding: 10px; /* Réduit l'espace autour des sections */
+    }
+
+    h2 {
+        font-size: 30px; /* Réduit la taille des titres pour petits écrans */
+    }
+
+    h3 {
+        font-size: 25px; /* Réduit la taille des sous-titres pour petits écrans */
+    }
+
+    p, ul, li {
+        font-size: 16px; /* Réduit la taille du texte pour petits écrans */
+    }
+
+    input, textarea, button {
+        width: 100%; /* Utilise toute la largeur disponible pour les formulaires */
+    }
+}
